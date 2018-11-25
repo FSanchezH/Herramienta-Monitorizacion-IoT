@@ -17,14 +17,8 @@ export class MapComponent implements OnInit {
     this.longitude = event.coords.lng;
     this.locationChosen = true;
   }
-
-  onChoseMarker(){
-    console.log("pulsación en el marcador capturada"); //Así capturo la pulsación encima de un "sensor"
-  }
-
+  
   ngOnInit() {
 
   }
-
-
 }
