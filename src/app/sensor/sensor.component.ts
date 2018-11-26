@@ -9,10 +9,10 @@ export class SensorComponent implements OnInit {
   @Input() latitude: number;
   @Input() longitude: number;
   @Input() ID: string;
-  temperatura = "Temperatura medida por el sensor";
-  bateria = "% de batería que le queda al sensor";
-  cobertura = "señal que recibe el sensor";
-  incidencias = "cantidad de incidencias registradas en las últimas 24h";
+  temperatura = "18 ºC";
+  bateria = "80%";
+  cobertura = "-86 dBm";
+  incidencias = "0";
   ngOnInit() {
   }
 

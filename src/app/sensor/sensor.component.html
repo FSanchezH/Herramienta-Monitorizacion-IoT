@@ -1,9 +1,10 @@
 
 <agm-marker [latitude]="latitude" 
     [longitude]="longitude"
-    [openInfoWindow]= true>
-    <agm-info-window 
-      [disableAutoPan]="true">
+    [openInfoWindow]= true
+    [iconUrl]="'./assets/marker_24.png'">
+    <agm-info-window
+      [maxWidth]="200">
         <h2>Este es el sensor número: <strong>{{ID}}</strong></h2>
         <div><strong>Temperatura: </strong>{{temperatura}}</div>
         <div><strong>Batería: </strong>{{bateria}}</div>
