@@ -9,11 +9,22 @@ export class SensorComponent implements OnInit {
   @Input() latitude: number;
   @Input() longitude: number;
   @Input() ID: string;
+  icono: string;
   temperatura = "18 ºC";
   bateria = "80%";
   cobertura = "-86 dBm";
-  incidencias = "0";
+  @Input() incidencias: number;
+  selectIcon(incidencias);
+
+  selectIcon(incidencias){
+    if(incidencias < 1){
+        this.icono = './assets/images/greenSensor.png';
+    }else{
+        this.icono = './assets/images/redSensor.png';
+    }
+    return this.icono;
+  }
+  
   ngOnInit() {
   }
-
 }
