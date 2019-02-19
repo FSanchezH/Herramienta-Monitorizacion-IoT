@@ -9,7 +9,7 @@ export class SensorComponent implements OnInit {
   @Input() latitude: number;
   @Input() longitude: number;
   @Input() ID: string;
-  icono = './assets/images/signalMarker.png';
+  @Input() icono = './assets/images/signalMarker_32.png';
   temperatura = "18 ºC";
   bateria = "80%";
   cobertura = "-86 dBm";
@@ -18,9 +18,9 @@ export class SensorComponent implements OnInit {
 
   selectIcon(incidencias){
     if(incidencias < 1){
-        this.icono = './assets/images/greenSensor.png';
+        this.icono = './assets/images/signalMarker_32.png';
     }else{
-        this.icono = './assets/images/redSensor.png';
+        this.icono = './assets/images/marker_24.png';
     }
     return this.icono;
   }

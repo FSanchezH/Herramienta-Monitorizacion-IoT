@@ -1,7 +1,8 @@
-<agm-marker [latitude]="latitude" 
-    [longitude]="longitude"
+<agm-marker 
+    [latitude]=latitude 
+    [longitude]=longitude
     [openInfoWindow]= true
-    [iconUrl]="icono">
+    [(iconUrl)]=icono>
     <agm-info-window
       [maxWidth]="200">
         <h2>Este es el sensor número: <strong>{{ID}}</strong></h2>
