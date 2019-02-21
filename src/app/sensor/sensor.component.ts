@@ -9,22 +9,23 @@ export class SensorComponent implements OnInit {
   @Input() latitude: number;
   @Input() longitude: number;
   @Input() ID: string;
-  @Input() icono = './assets/images/signalMarker_32.png';
+  icono = './assets/images/signal_3_incidencia.png';
   temperatura = "18 ºC";
   bateria = "80%";
   cobertura = "-86 dBm";
   @Input() incidencias: number;
-  selectIcon(incidencias);
-
-  selectIcon(incidencias){
-    if(incidencias < 1){
-        this.icono = './assets/images/signalMarker_32.png';
-    }else{
-        this.icono = './assets/images/marker_24.png';
-    }
-    return this.icono;
-  }
   
   ngOnInit() {
+    if(this.incidencias<1){
+      this.icono = './assets/images/signal_0_incidencia.png';
+    }else if(this.incidencias<2){
+      this.icono = './assets/images/signal_1_incidencia.png';
+    }else if(this.incidencias<3){
+      this.icono = './assets/images/signal_2_incidencia.png';
+    }else if(this.incidencias<4){
+      this.icono = './assets/images/signal_3_incidencia.png';
+    }else{
+      this.icono = './assets/images/signal_3+_incidencia.png';
+    }
   }
 }
