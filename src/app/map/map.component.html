@@ -1,14 +1,5 @@
 <h2>{{title}}</h2>
-<agm-map [latitude]="36.719681" [longitude]="-4.453487" [zoom]="15" [streetViewControl] = false  (mapClick)="onChoseLocation($event)">
-  <agm-marker 
-    [latitude]="latitude"
-    [longitude]="longitude" 
-    *ngIf="locationChosen" 
-    (markerClick)="onChoseMarker()"> <!-- Con el if solo lo muestro si antes he hecho click --> 
-    <agm-info-window>
-      Este marcador se va colocando donde hagas <strong>click</strong>
-    </agm-info-window>
-  </agm-marker>
+<agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl] = false>
   <app-sensor
   [latitude]="36.72014705451366"
   [longitude]="-4.468596293137637"

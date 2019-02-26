@@ -9,7 +9,7 @@ export class SensorComponent implements OnInit {
   @Input() latitude: number;
   @Input() longitude: number;
   @Input() ID: string;
-  icono = './assets/images/signal_3_incidencia.png';
+  icono: string;
   temperatura = "18 ºC";
   bateria = "80%";
   cobertura = "-86 dBm";

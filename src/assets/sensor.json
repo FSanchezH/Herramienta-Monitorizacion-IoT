@@ -1,0 +1,22 @@
+{
+    "sensor": [
+        {
+            "id": "001",
+            "latitude": 36.72014705451366,
+            "longitude": -4.468596293137637,
+            "temperatura": "18 ºC",
+            "bateria": "80%",
+            "cobertura": "-86 dBm",
+            "incidencias": 3
+        },
+        {
+            "id": "002",
+            "latitude": 36.72005666274869,
+            "longitude": -4.464288772194351,
+            "temperatura": "18 ºC",
+            "bateria": "80%",
+            "cobertura": "-86 dBm",
+            "incidencias": 3
+        }
+    ]
+}

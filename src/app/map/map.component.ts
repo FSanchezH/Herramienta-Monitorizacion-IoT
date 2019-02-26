@@ -6,19 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  title = 'Mapa de sensores de Teatinos';
-  latitude = 36.719681;
-  longitude = -4.453487;
-  locationChosen = false;
-
-  onChoseLocation(event){
-    //console.log(event);
-    this.latitude = event.coords.lat;  //Así asigno los nuevos valores a las variables
-    this.longitude = event.coords.lng;
-    this.locationChosen = true;
-  }
+  title: string;
+  latitude: number;
+  longitude: number;
+  zoom: number;
   
   ngOnInit() {
-
+    this.title = 'Mapa de sensores de Teatinos';
+    this.latitude = 36.71982733265364;
+    this.longitude = -4.460006260056474;
+    this.zoom = 15
   }
 }
