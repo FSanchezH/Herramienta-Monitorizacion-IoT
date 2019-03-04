@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Sensor } from '../classes/sensor';
 
 @Component({
   selector: 'app-sensor',
@@ -6,16 +7,34 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sensor.component.css']
 })
 export class SensorComponent implements OnInit {
-  @Input() latitude: number;
-  @Input() longitude: number;
-  @Input() ID: string;
+  constructor(public sensor: Sensor){}
+  ID: string;
+  latitude: number;
+  longitude: number;
   icono: string;
-  temperatura = "18 ºC";
-  bateria = "80%";
-  cobertura = "-86 dBm";
-  @Input() incidencias: number;
+  temperatura: string;
+  bateria: string;
+  cobertura: string;
+  incidencias: number;
   
-  ngOnInit() {
+ public ngOnInit() {
+    this.populateSensor();
+    this.chooseIcon();
+  }
+
+  private populateSensor(){
+    this.sensor.getSensor();
+    console.log(this.sensor);
+    this.ID = this.sensor.ID;
+    this.latitude = this.sensor.latitude;
+    this.longitude = this.sensor.longitude;
+    this.temperatura = this.sensor.temperatura;
+    this.bateria = this.sensor.bateria;
+    this.cobertura = this.sensor.cobertura;
+    this.incidencias = this.sensor.incidencias;
+  }
+
+  private chooseIcon(){
     if(this.incidencias<1){
       this.icono = './assets/images/signal_0_incidencia.png';
     }else if(this.incidencias<2){
@@ -28,4 +47,5 @@ export class SensorComponent implements OnInit {
       this.icono = './assets/images/signal_3+_incidencia.png';
     }
   }
+
 }
