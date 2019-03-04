@@ -30,12 +30,12 @@ export class Sensor {
         this.cobertura = JSON.parse(sensorData.cobertura);
         this.incidencias = JSON.parse(sensorData.incidencias);
         console.log(sensorData);*/
-        this.ID = "1";
-        this.latitude = 36.72014705451366;
-        this.longitude = -4.468596293137637;
-        this.temperatura = "18 ºC";
-        this.bateria = "80%";
-        this.cobertura = "-86 dBm";
-        this.incidencias = 3;
+        this.ID = sensorData.id;
+        this.latitude = sensorData.latitude;
+        this.longitude = sensorData.longitude;
+        this.temperatura = sensorData.temperatura;
+        this.bateria = sensorData.bateria;
+        this.cobertura = sensorData.cobertura;
+        this.incidencias = sensorData.incidencias;
     }
 }
