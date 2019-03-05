@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Input, Injectable } from "@angular/core";
 
 import sensorData from '../../assets/sensor.json';
 
@@ -7,7 +7,6 @@ import sensorData from '../../assets/sensor.json';
 })
 
 export class Sensor {
-    ID: string;
     latitude: number;
     longitude: number;
     temperatura: string;
@@ -20,22 +19,14 @@ export class Sensor {
     
     
 
-    public getSensor(){
-        /*this._value = JSON.parse(sensorData);
-        this.ID = JSON.parse(sensorData.id);
-        this.latitude = JSON.parse(sensorData.latitude);
-        this.longitude = JSON.parse(sensorData.longitude);
-        this.temperatura = JSON.parse(sensorData.temperatura);
-        this.bateria = JSON.parse(sensorData.bateria);
-        this.cobertura = JSON.parse(sensorData.cobertura);
-        this.incidencias = JSON.parse(sensorData.incidencias);
-        console.log(sensorData);*/
-        this.ID = sensorData.id;
-        this.latitude = sensorData.latitude;
-        this.longitude = sensorData.longitude;
-        this.temperatura = sensorData.temperatura;
-        this.bateria = sensorData.bateria;
-        this.cobertura = sensorData.cobertura;
-        this.incidencias = sensorData.incidencias;
+    public getSensor(ID: number){
+        console.log(sensorData);
+        
+        this.latitude = sensorData[ID-1].latitude;
+        this.longitude = sensorData[ID-1].longitude;
+        this.temperatura = sensorData[ID-1].temperatura;
+        this.bateria = sensorData[ID-1].bateria;
+        this.cobertura = sensorData[ID-1].cobertura;
+        this.incidencias = sensorData[ID-1].incidencias;
     }
 }
