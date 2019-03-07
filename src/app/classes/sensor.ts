@@ -1,4 +1,7 @@
-import { Input, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
+import {  HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
+
 
 import sensorData from '../../assets/sensor.json';
 
@@ -7,21 +10,24 @@ import sensorData from '../../assets/sensor.json';
 })
 
 export class Sensor {
+    constructor(private http: HttpClient){};
     latitude: number;
     longitude: number;
     temperatura: string;
     bateria: string;
     cobertura: string;
     incidencias: number;
-    
-    private _value: Object;
-
-    
-    
+    endpoint = 'https://raw.githubusercontent.com/FSanchezH/Herramienta-Monitorizacion-IoT/master/src/assets/sensor.json';
 
     public getSensor(ID: number){
+        //this.http.get(this.endpoint).forEach();
+
+
+
+
+
+
         console.log(sensorData);
-        
         this.latitude = sensorData[ID-1].latitude;
         this.longitude = sensorData[ID-1].longitude;
         this.temperatura = sensorData[ID-1].temperatura;
