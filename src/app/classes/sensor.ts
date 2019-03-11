@@ -17,10 +17,10 @@ export class Sensor {
     bateria: string;
     cobertura: string;
     incidencias: number;
-    endpoint = 'https://raw.githubusercontent.com/FSanchezH/Herramienta-Monitorizacion-IoT/master/src/assets/sensor.json';
+    endpoint = 'https://pastebin.com/raw/CThijewE?JSON';
 
     public getSensor(ID: number){
-        //this.http.get(this.endpoint).forEach();
+        this.http.get(this.endpoint);
 
 
 
