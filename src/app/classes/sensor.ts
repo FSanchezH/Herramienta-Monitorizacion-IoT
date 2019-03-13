@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import {  HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
 
@@ -9,8 +8,7 @@ import sensorData from '../../assets/sensor.json';
     providedIn: 'root',
 })
 
-export class Sensor {
-    constructor(private http: HttpClient){};
+export class CTSensor {
     latitude: number;
     longitude: number;
     temperatura: string;
@@ -20,13 +18,6 @@ export class Sensor {
     endpoint = 'https://pastebin.com/raw/CThijewE?JSON';
 
     public getSensor(ID: number){
-        this.http.get(this.endpoint);
-
-
-
-
-
-
         console.log(sensorData);
         this.latitude = sensorData[ID-1].latitude;
         this.longitude = sensorData[ID-1].longitude;

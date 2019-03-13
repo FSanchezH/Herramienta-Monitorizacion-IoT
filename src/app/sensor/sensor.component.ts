@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Sensor } from '../classes/sensor';
+import { CTsensor } from "../classes/CTsensor";
 
 import sensorData from '../../assets/sensor.json';
 
@@ -9,7 +9,7 @@ import sensorData from '../../assets/sensor.json';
   styleUrls: ['./sensor.component.css']
 })
 export class SensorComponent implements OnInit {
-  constructor(public sensor: Sensor){}
+  constructor(public sensor: CTsensor){}
   @Input() ID: number;
   latitude: number;
   longitude: number;
@@ -18,14 +18,14 @@ export class SensorComponent implements OnInit {
   bateria: string;
   cobertura: string;
   incidencias: number;
-  sensorList: Sensor[];
+  sensorList: CTsensor[];
 
  public ngOnInit() {
-    this.populateSensor();
+    //this.populateSensor();
     this.chooseIcon();
   }
 
-  private populateSensor(){
+  /*private populateSensor(){
     this.sensor.getSensor(this.ID);
     console.log(this.sensor);
     this.latitude = this.sensor.latitude;
@@ -34,7 +34,7 @@ export class SensorComponent implements OnInit {
     this.bateria = this.sensor.bateria;
     this.cobertura = this.sensor.cobertura;
     this.incidencias = this.sensor.incidencias;
-  }
+  }*/
 
   private chooseIcon(){
     if(this.incidencias<1){
