@@ -17,8 +17,8 @@ export class MapComponent implements OnInit {
   sensor: CTsensor;
   
   ngOnInit() {
-    this.initialiteMap();
-    this.sensorService.getSensorList().subscribe((data: CTsensor)=> this.sensor = {
+    this.initializeMap();
+    this.sensorService.getSensor().subscribe((data: CTsensor)=> this.sensor = {
       ID : data['id'],
       latitude: data['latitude'],
       longitude: data['longitude'],
@@ -29,7 +29,7 @@ export class MapComponent implements OnInit {
     });
   }
 
-  private initialiteMap(){
+  private initializeMap(){
     this.latitude = 36.71982733265364;
     this.longitude = -4.460006260056474;
     this.zoom = 15;
