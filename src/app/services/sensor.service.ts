@@ -9,7 +9,7 @@ export class SensorService {
   urlSensorList = 'https://pastebin.com/raw/CThijewE';
   urlSensor = 'https://pastebin.com/raw/TrwqJ5Ef';
 
-  public getSensorList(){
+  public getSensor(){
     return this.http.get(this.urlSensor);
   }
 }

@@ -1,40 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CTsensor } from "../classes/CTsensor";
 
-import sensorData from '../../assets/sensor.json';
-
 @Component({
   selector: 'app-sensor',
   templateUrl: './sensor.component.html',
   styleUrls: ['./sensor.component.css']
 })
+
 export class SensorComponent implements OnInit {
   constructor(public sensor: CTsensor){}
   @Input() ID: number;
-  latitude: number;
-  longitude: number;
-  icono: string;
-  temperatura: string;
-  bateria: string;
-  cobertura: string;
-  incidencias: number;
+  @Input() latitude: number;
+  @Input() longitude: number;
+  @Input() icono: string;
+  @Input() temperatura: string;
+  @Input() bateria: string;
+  @Input() cobertura: string;
+  @Input() incidencias: number;
   sensorList: CTsensor[];
 
  public ngOnInit() {
-    //this.populateSensor();
     this.chooseIcon();
   }
-
-  /*private populateSensor(){
-    this.sensor.getSensor(this.ID);
-    console.log(this.sensor);
-    this.latitude = this.sensor.latitude;
-    this.longitude = this.sensor.longitude;
-    this.temperatura = this.sensor.temperatura;
-    this.bateria = this.sensor.bateria;
-    this.cobertura = this.sensor.cobertura;
-    this.incidencias = this.sensor.incidencias;
-  }*/
 
   private chooseIcon(){
     if(this.incidencias<1){
