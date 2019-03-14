@@ -20,7 +20,6 @@ export class SensorComponent implements OnInit {
 
  public ngOnInit() {
     this.chooseIcon();
-    console.log(this.ID);
   }
 
   private chooseIcon(){
