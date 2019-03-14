@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { SensorComponent } from './sensor/sensor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SensorService } from './services/sensor.service';
 
 @NgModule({
   declarations: [

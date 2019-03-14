@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {  HttpClient } from "@angular/common/http";
-import { CTsensor } from "../classes/CTsensor";
+import { CTSensor } from "../classes/CTSensor";
 import { SensorService } from "../services/sensor.service";
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import sensorData from '../../assets/sensor.json';
 
 @Component({
   selector: 'map',
@@ -14,19 +16,17 @@ export class MapComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
-  sensor: CTsensor;
+  //sensorListObservable:  Observable<CTsensor[]>;
+  sensorListObservable:  CTSensor[];
   
   ngOnInit() {
     this.initializeMap();
-    this.sensorService.getSensor().subscribe((data: CTsensor)=> this.sensor = {
-      ID : data['id'],
-      latitude: data['latitude'],
-      longitude: data['longitude'],
-      temperatura: data['temperatura'],
-      bateria: data['bateria'],
-      cobertura: data['cobertura'],
-      incidencias: data['incidencias']
-    });
+    //this.sensorService.getSensor().subscribe((data: CTsensor)=> this.sensor = { ...data});
+    //console.log(this.sensor);
+    //this.sensorListObservable = this.http.get<CTsensor[]>("../../assets/sensor.json");
+    this.sensorListObservable = sensorData;
+    console.log(this.sensorListObservable);
+    this.sensorService.getSensors()
   }
 
   private initializeMap(){

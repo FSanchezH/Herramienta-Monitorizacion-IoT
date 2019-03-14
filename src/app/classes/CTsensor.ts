@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 @Injectable({
     providedIn: 'root'
 })
-export class CTsensor {
+export class CTSensor {
     ID: number;
     latitude: number;
     longitude: number;

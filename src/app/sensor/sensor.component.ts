@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CTsensor } from "../classes/CTsensor";
 
 @Component({
   selector: 'app-sensor',
@@ -8,19 +7,20 @@ import { CTsensor } from "../classes/CTsensor";
 })
 
 export class SensorComponent implements OnInit {
-  constructor(public sensor: CTsensor){}
   @Input() ID: number;
   @Input() latitude: number;
   @Input() longitude: number;
-  @Input() icono: string;
+  icono: string;
   @Input() temperatura: string;
   @Input() bateria: string;
   @Input() cobertura: string;
   @Input() incidencias: number;
-  sensorList: CTsensor[];
+  
+  
 
  public ngOnInit() {
     this.chooseIcon();
+    console.log(this.ID);
   }
 
   private chooseIcon(){
