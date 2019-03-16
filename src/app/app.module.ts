@@ -31,7 +31,7 @@ import { SensorService } from './services/sensor.service';
       apiKey: 'AIzaSyC7vUp4j4mQ75e6V6A0rWpa9CY8SSrkD7A',  //La key es necesaria para que funcione
     })
   ],
-  providers: [],
+  providers: [SensorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

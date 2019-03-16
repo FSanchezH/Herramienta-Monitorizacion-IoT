@@ -1,9 +1,4 @@
-import { Injectable } from "@angular/core";
-
-@Injectable({
-    providedIn: 'root'
-})
-export class CTSensor {
+export interface ISensor {
     ID: number;
     latitude: number;
     longitude: number;
