@@ -12,14 +12,13 @@ export class MapComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
-  
+
   public sensorList = [];
 
   ngOnInit() {
     this.initializeMap();
     this.sensorService.getSensors()
       .subscribe(data => this.sensorList = data);
-
   }
 
   private initializeMap() {
