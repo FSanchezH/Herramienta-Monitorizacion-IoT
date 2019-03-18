@@ -28,8 +28,44 @@
     },
     {
         "id": 4,
-        "latitude": 36.719681,
-        "longitude": -4.453487,
+        "latitude": 36.715216,
+        "longitude": -4.477378,
+        "temperatura": "15,6 ºC",
+        "bateria": "50%",
+        "cobertura": "-72 dBm",
+        "incidencias": 2
+    },
+    {
+        "id": 5,
+        "latitude": 36.727827,
+        "longitude": -4.469656,
+        "temperatura": "16 ºC",
+        "bateria": "80%",
+        "cobertura": "-86 dBm",
+        "incidencias": 3
+    },
+    {
+        "id": 6,
+        "latitude": 36.724234,
+        "longitude": -4.474576,
+        "temperatura": "14,8 ºC",
+        "bateria": "20%",
+        "cobertura": "-80 dBm",
+        "incidencias": 1
+    },
+    {
+        "id": 7,
+        "latitude": 36.723611,
+        "longitude": -4.483788,
+        "temperatura": "14 ºC",
+        "bateria": "50%",
+        "cobertura": "-78 dBm",
+        "incidencias": 0
+    },
+    {
+        "id": 8,
+        "latitude": 36.718384,
+        "longitude": -4.477864,
         "temperatura": "15,6 ºC",
         "bateria": "50%",
         "cobertura": "-72 dBm",

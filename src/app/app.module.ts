@@ -5,6 +5,8 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,12 +14,14 @@ import { MapComponent } from './map/map.component';
 import { SensorComponent } from './sensor/sensor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SensorService } from './services/sensor.service';
+import { ListOfSensorsComponent } from './list-of-sensors/list-of-sensors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    SensorComponent
+    SensorComponent,
+    ListOfSensorsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { SensorService } from './services/sensor.service';
     MatButtonModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatTableModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC7vUp4j4mQ75e6V6A0rWpa9CY8SSrkD7A',  //La key es necesaria para que funcione

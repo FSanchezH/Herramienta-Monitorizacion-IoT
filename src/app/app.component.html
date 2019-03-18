@@ -1,6 +1,6 @@
 <h1>Herramienta de Monitorización IoT</h1>
 
 <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
-        <mat-tab label="Mapa de sensores de Teatinos"><map></map></mat-tab>
-        <mat-tab label="Lista de sensores de Teatinos">Lista de sensores de TeatinosF</mat-tab>
+        <mat-tab label="Mapa de sensores de Teatinos"><map [sensorList]="sensorList"></map></mat-tab>
+        <mat-tab label="Lista de sensores de Teatinos"><list-of-sensors [dataSource]="sensorList"></list-of-sensors></mat-tab>
 </mat-tab-group>

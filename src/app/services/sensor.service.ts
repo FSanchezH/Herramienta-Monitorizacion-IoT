@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class SensorService {
-  private _urlSensorList: string = 'http://www.mocky.io/v2/5c8cca67310000d90c4c2522';
+  // private _urlSensorList: string = 'http://www.mocky.io/v2/5c8cca67310000d90c4c2522';
+  private _urlSensorList: string = 'http://www.mocky.io/v2/5c8fff4f3600004b00f0ffed';
   constructor(private http: HttpClient) { };
 
   private _localUrl: string = '../../assets/data/sensor.json';

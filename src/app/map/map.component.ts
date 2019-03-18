@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { SensorService } from "../services/sensor.service";
 
@@ -12,18 +12,20 @@ export class MapComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
-
-  public sensorList = [];
+  @Input() sensorList = [];
 
   ngOnInit() {
     this.initializeMap();
-    this.sensorService.getSensors()
-      .subscribe(data => this.sensorList = data);
   }
 
   private initializeMap() {
     this.latitude = 36.71982733265364;
     this.longitude = -4.460006260056474;
     this.zoom = 15;
+  }
+
+  onChoseLocation(event){
+    this.latitude = event.coords.lat;
+    this.longitude = event.coords.lng;
   }
 }
