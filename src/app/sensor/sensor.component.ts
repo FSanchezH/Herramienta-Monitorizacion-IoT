@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class SensorComponent implements OnInit {
-  @Input() ID: number;
+  @Input() id: number;
   @Input() latitude: number;
   @Input() longitude: number;
   icono: string;
@@ -15,23 +15,23 @@ export class SensorComponent implements OnInit {
   @Input() bateria: string;
   @Input() cobertura: string;
   @Input() incidencias: number;
-  
-  
 
- public ngOnInit() {
+
+
+  public ngOnInit() {
     this.chooseIcon();
   }
 
-  private chooseIcon(){
-    if(this.incidencias<1){
+  private chooseIcon() {
+    if (this.incidencias < 1) {
       this.icono = './assets/images/signal_0_incidencia.png';
-    }else if(this.incidencias<2){
+    } else if (this.incidencias < 2) {
       this.icono = './assets/images/signal_1_incidencia.png';
-    }else if(this.incidencias<3){
+    } else if (this.incidencias < 3) {
       this.icono = './assets/images/signal_2_incidencia.png';
-    }else if(this.incidencias<4){
+    } else if (this.incidencias < 4) {
       this.icono = './assets/images/signal_3_incidencia.png';
-    }else{
+    } else {
       this.icono = './assets/images/signal_3+_incidencia.png';
     }
   }
