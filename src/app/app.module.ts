@@ -5,7 +5,8 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,7 @@ import { ListOfSensorsComponent } from './list-of-sensors/list-of-sensors.compon
     MatTabsModule,
     MatCheckboxModule,
     MatTableModule,
+    MatSortModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC7vUp4j4mQ75e6V6A0rWpa9CY8SSrkD7A',  //La key es necesaria para que funcione

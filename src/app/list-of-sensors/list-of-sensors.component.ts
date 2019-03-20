@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
+import { MatSort, MatTableDataSource } from '@angular/material';
+
+
+
 
 @Component({
   selector: 'list-of-sensors',
@@ -8,10 +12,17 @@ import { ISensor } from '../interfaces/sensor';
 })
 
 export class ListOfSensorsComponent implements OnInit {
-  ngOnInit(): void {
+  @Input() sensorList: ISensor[] = [];
+  public displayedColumns: string[] = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
+  public dataSource = new MatTableDataSource();
 
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngOnInit(): void {
+    this.dataSource.sort = this.sort;
   }
-  constructor() { }
-  displayedColumns: string[] = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
-  @Input() dataSource: ISensor[] = [];
+  ngAfterViewInit(): void {
+    this.dataSource = new MatTableDataSource(this.sensorList);
+    this.dataSource.sort = this.sort;
+  }
 }
