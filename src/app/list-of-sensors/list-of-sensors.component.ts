@@ -2,9 +2,6 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
 import { MatSort, MatTableDataSource } from '@angular/material';
 
-
-
-
 @Component({
   selector: 'list-of-sensors',
   templateUrl: './list-of-sensors.component.html',
@@ -21,7 +18,10 @@ export class ListOfSensorsComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
   }
-  ngAfterViewInit(): void {
+
+  ngAfterViewChecked(): void {
+    //Called after every check of the component's view. Applies to components only.
+    //Add 'implements AfterViewChecked' to the class.
     this.dataSource = new MatTableDataSource(this.sensorList);
     this.dataSource.sort = this.sort;
   }

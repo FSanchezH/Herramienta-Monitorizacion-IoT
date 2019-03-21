@@ -16,8 +16,6 @@ export class SensorComponent implements OnInit {
   @Input() cobertura: string;
   @Input() incidencias: number;
 
-
-
   public ngOnInit() {
     this.chooseIcon();
   }

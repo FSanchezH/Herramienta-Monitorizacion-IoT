@@ -1,29 +1,10 @@
 <agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl]=false
   (mapClick)="onChoseLocation($event)" [mapTypeId]="'hybrid'" [clickableIcons]=false>
-  <app-sensor id={{sensorList[0].id}} latitude={{sensorList[0].latitude}} longitude={{sensorList[0].longitude}}
-    temperatura={{sensorList[0].temperatura}} bateria={{sensorList[0].bateria}} cobertura={{sensorList[0].cobertura}}
-    incidencias={{sensorList[0].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[1].id}} latitude={{sensorList[1].latitude}} longitude={{sensorList[1].longitude}}
-    temperatura={{sensorList[1].temperatura}} bateria={{sensorList[1].bateria}} cobertura={{sensorList[1].cobertura}}
-    incidencias={{sensorList[1].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[2].id}} latitude={{sensorList[2].latitude}} longitude={{sensorList[2].longitude}}
-    temperatura={{sensorList[2].temperatura}} bateria={{sensorList[2].bateria}} cobertura={{sensorList[2].cobertura}}
-    incidencias={{sensorList[2].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[3].id}} latitude={{sensorList[3].latitude}} longitude={{sensorList[3].longitude}}
-    temperatura={{sensorList[3].temperatura}} bateria={{sensorList[3].bateria}} cobertura={{sensorList[3].cobertura}}
-    incidencias={{sensorList[3].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[4].id}} latitude={{sensorList[4].latitude}} longitude={{sensorList[4].longitude}}
-    temperatura={{sensorList[4].temperatura}} bateria={{sensorList[4].bateria}} cobertura={{sensorList[4].cobertura}}
-    incidencias={{sensorList[4].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[5].id}} latitude={{sensorList[5].latitude}} longitude={{sensorList[5].longitude}}
-    temperatura={{sensorList[5].temperatura}} bateria={{sensorList[5].bateria}} cobertura={{sensorList[5].cobertura}}
-    incidencias={{sensorList[5].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[6].id}} latitude={{sensorList[6].latitude}} longitude={{sensorList[6].longitude}}
-    temperatura={{sensorList[6].temperatura}} bateria={{sensorList[6].bateria}} cobertura={{sensorList[6].cobertura}}
-    incidencias={{sensorList[6].incidencias}}></app-sensor>
-  <app-sensor id={{sensorList[7].id}} latitude={{sensorList[7].latitude}} longitude={{sensorList[7].longitude}}
-    temperatura={{sensorList[7].temperatura}} bateria={{sensorList[7].bateria}} cobertura={{sensorList[7].cobertura}}
-    incidencias={{sensorList[7].incidencias}}></app-sensor>
+  <li *ngFor="let sensor of sensorList">
+    <app-sensor id={{sensor.id}} latitude={{sensor.latitude}} longitude={{sensor.longitude}}
+      temperatura={{sensor.temperatura}} bateria={{sensor.bateria}} cobertura={{sensor.cobertura}}
+      incidencias={{sensor.incidencias}}></app-sensor>
+  </li>
 </agm-map>
 <div style="font-size: 8px">Icons made by
   <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from
