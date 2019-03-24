@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { SensorService } from '../services/sensor.service';
 @Component({
   selector: 'list-of-sensors',
@@ -13,7 +13,6 @@ export class ListOfSensorsComponent implements OnInit {
   public sensorList: ISensor[] = [];
   public displayedColumns: string[] = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
   public dataSource = new MatTableDataSource();
-  public isDisabled: boolean = false;
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -27,5 +26,9 @@ export class ListOfSensorsComponent implements OnInit {
     //Add 'implements AfterContentChecked' to the class.
     this.dataSource = new MatTableDataSource(this.sensorList);
     this.dataSource.sort = this.sort;
+  }
+
+  showPopUp(sensor: ISensor){
+    console.log(sensor);
   }
 }
