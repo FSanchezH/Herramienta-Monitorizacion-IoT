@@ -2,9 +2,9 @@
 
 <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
         <mat-tab label="Mapa de sensores de Teatinos">
-                <map></map>
+                <map [sensorList]="sensorList"></map>
         </mat-tab>
         <mat-tab label="Lista de sensores de Teatinos">
-                <list-of-sensors></list-of-sensors>
+                <list-of-sensors [sensorList]="sensorList"></list-of-sensors>
         </mat-tab>
 </mat-tab-group>

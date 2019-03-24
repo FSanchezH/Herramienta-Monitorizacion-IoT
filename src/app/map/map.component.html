@@ -1,12 +1,12 @@
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl]=false
-  (mapClick)="onChoseLocation($event)" [mapTypeId]="'hybrid'" [clickableIcons]=false>
+<agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl]=false [mapTypeId]="'hybrid'"
+  [clickableIcons]=false>
   <li *ngFor="let sensor of sensorList">
     <app-sensor id={{sensor.id}} latitude={{sensor.latitude}} longitude={{sensor.longitude}}
       temperatura={{sensor.temperatura}} bateria={{sensor.bateria}} cobertura={{sensor.cobertura}}
       incidencias={{sensor.incidencias}}></app-sensor>
   </li>
 </agm-map>
+
 <div style="font-size: 8px">Icons made by
   <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from
   <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a>

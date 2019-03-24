@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, Input } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
-import { MatSort, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatSort, MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { SensorService } from '../services/sensor.service';
 @Component({
   selector: 'list-of-sensors',
@@ -9,8 +9,8 @@ import { SensorService } from '../services/sensor.service';
 })
 
 export class ListOfSensorsComponent implements OnInit {
-  constructor ( private sensorService : SensorService ) {}
-  public sensorList: ISensor[] = [];
+  constructor(private sensorService: SensorService, public dialog: MatDialog) { }
+  @Input() sensorList: ISensor[] = [];
   public displayedColumns: string[] = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
   public dataSource = new MatTableDataSource();
 
@@ -18,7 +18,7 @@ export class ListOfSensorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
-    this.sensorService.getSensors().subscribe(data => this.sensorList = data);
+    //this.sensorService.getSensors().subscribe(data => this.sensorList = data);
   }
 
   ngAfterContentChecked(): void {
@@ -28,7 +28,7 @@ export class ListOfSensorsComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  showPopUp(sensor: ISensor){
+  openDialog(sensor: ISensor) {
     console.log(sensor);
   }
 }
