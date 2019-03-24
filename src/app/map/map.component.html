@@ -1,3 +1,4 @@
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl]=false
   (mapClick)="onChoseLocation($event)" [mapTypeId]="'hybrid'" [clickableIcons]=false>
   <li *ngFor="let sensor of sensorList">
