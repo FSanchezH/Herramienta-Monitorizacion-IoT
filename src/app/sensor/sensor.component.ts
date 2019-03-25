@@ -15,9 +15,12 @@ export class SensorComponent implements OnInit {
   @Input() bateria: string;
   @Input() cobertura: string;
   @Input() incidencias: number;
-
+  public isDisabled: boolean = false;
   public ngOnInit() {
     this.chooseIcon();
+    if(this.incidencias == 0){
+      this.isDisabled = true;
+    }
   }
 
   private chooseIcon() {

@@ -7,9 +7,9 @@
     <agm-info-window
       [maxWidth]="200">
         <h2>Este es el sensor número: <strong>{{id}}</strong></h2>
-        <div><strong>Temperatura: </strong>{{temperatura}}</div>
-        <div><strong>Batería: </strong>{{bateria}}</div>
-        <div><strong>Cobertura: </strong>{{cobertura}}</div>
-        <div><strong>Incidencias: </strong>{{incidencias}}</div>
+        <div class="myDiv"><strong>Temperatura: </strong>{{temperatura}}</div>
+        <div class="myDiv"><strong>Batería: </strong>{{bateria}}</div>
+        <div class="myDiv"><strong>Cobertura: </strong>{{cobertura}}</div>
+        <div><strong>Incidencias: </strong><button mat-button color="warn" disabled={{isDisabled}}>{{incidencias}}</button></div>
   </agm-info-window>    
 </agm-marker>
