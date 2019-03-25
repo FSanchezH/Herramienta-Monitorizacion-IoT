@@ -1,10 +1,12 @@
 <agm-map [latitude]=latitude [longitude]=longitude [zoom]=zoom [streetViewControl]=false [mapTypeId]="'hybrid'"
-  [clickableIcons]=false>
-  <li *ngFor="let sensor of sensorList">
-    <app-sensor id={{sensor.id}} latitude={{sensor.latitude}} longitude={{sensor.longitude}}
-      temperatura={{sensor.temperatura}} bateria={{sensor.bateria}} cobertura={{sensor.cobertura}}
-      incidencias={{sensor.incidencias}}></app-sensor>
-  </li>
+  [clickableIcons]=false (mapReady)="loadIcons()">
+  <div *ngIf="mapReady">
+    <li *ngFor="let sensor of sensorList">
+      <app-sensor id={{sensor.id}} latitude={{sensor.latitude}} longitude={{sensor.longitude}}
+        temperatura={{sensor.temperatura}} bateria={{sensor.bateria}} cobertura={{sensor.cobertura}}
+        incidencias={{sensor.incidencias}}></app-sensor>
+    </li>
+  </div>
 </agm-map>
 
 <div style="font-size: 8px">Icons made by

@@ -12,12 +12,16 @@ export class MapComponent implements OnInit {
   latitude: number;
   longitude: number;
   zoom: number;
+  public mapReady: boolean = false;
   @Input() sensorList: ISensor[] = [];
-  isLoaded: boolean = true;
   ngOnInit(): void {
     this.initializeMap();
   }
     
+  loadIcons(){
+    this.mapReady = true;
+  }
+
   private initializeMap() {
     this.latitude = 36.720534;
     this.longitude = -4.471759;
