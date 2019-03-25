@@ -2,9 +2,7 @@
   [clickableIcons]=false (mapReady)="loadIcons()">
   <div *ngIf="mapReady">
     <li *ngFor="let sensor of sensorList">
-      <app-sensor id={{sensor.id}} latitude={{sensor.latitude}} longitude={{sensor.longitude}}
-        temperatura={{sensor.temperatura}} bateria={{sensor.bateria}} cobertura={{sensor.cobertura}}
-        incidencias={{sensor.incidencias}}></app-sensor>
+      <app-sensor [sensor]="sensor"></app-sensor>
     </li>
   </div>
 </agm-map>
