@@ -2,6 +2,7 @@ import { Component, ViewChild, Input, AfterContentChecked } from '@angular/core'
 import { ISensor } from '../interfaces/sensor';
 import { MatSort, MatTableDataSource, MatPaginator, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { SensorService } from '../services/sensor.service';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'list-of-sensors',
@@ -32,7 +33,13 @@ export class ListOfSensorsComponent implements AfterContentChecked {
     }
   }
 
-  openDialog(sensor: ISensor) {
-    console.log(sensor);
+  openDialog(sensor: ISensor): void {
+    let dialogRef = this.dialog.open(PopupComponent,{
+      data: sensor
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

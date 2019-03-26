@@ -10,6 +10,6 @@
         <div class="myDiv"><strong>Temperatura: </strong>{{sensor.temperatura}}</div>
         <div class="myDiv"><strong>Batería: </strong>{{sensor.bateria}}</div>
         <div class="myDiv"><strong>Cobertura: </strong>{{sensor.cobertura}}</div>
-        <div><strong>Incidencias: </strong><button mat-button color="warn" disabled={{isDisabled}}>{{sensor.incidencias}}</button></div>
+        <div><strong>Incidencias: </strong><button mat-button color="warn" disabled={{isDisabled}} (click)="openDialog()">{{sensor.incidencias}}</button></div>
   </agm-info-window>    
 </agm-marker>

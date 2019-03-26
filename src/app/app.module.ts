@@ -18,13 +18,15 @@ import { SensorComponent } from './sensor/sensor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SensorService } from './services/sensor.service';
 import { ListOfSensorsComponent } from './list-of-sensors/list-of-sensors.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     SensorComponent,
-    ListOfSensorsComponent
+    ListOfSensorsComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { ListOfSensorsComponent } from './list-of-sensors/list-of-sensors.compon
     })
   ],
   providers: [SensorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent]
 })
 export class AppModule { }

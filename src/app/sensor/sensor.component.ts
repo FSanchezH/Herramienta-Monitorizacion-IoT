@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
+import { MatDialog, MatDialogConfig} from '@angular/material';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-sensor',
@@ -11,6 +13,8 @@ export class SensorComponent implements OnInit {
   @Input() sensor: ISensor;
   public icono: string;
   public isDisabled: boolean = false;
+
+  constructor (public dialog: MatDialog) {}
 
   public ngOnInit() {
     this.chooseIcon();
@@ -31,5 +35,15 @@ export class SensorComponent implements OnInit {
     } else {
       this.icono = './assets/images/signal_3+_incidencia.png';
     }
+  }
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(PopupComponent,{
+      data: this.sensor
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
