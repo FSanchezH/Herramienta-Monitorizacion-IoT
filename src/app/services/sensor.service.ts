@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class SensorService {
   // private _urlSensorList: string = 'http://www.mocky.io/v2/5c8cca67310000d90c4c2522'; Lista de 4 sensores con las incidencias como números
   // private _urlSensorList: string = 'http://www.mocky.io/v2/5c8fff4f3600004b00f0ffed'; Lista de 8 sensores con las incidencias como números
-  private _urlSensorList: string = 'http://www.mocky.io/v2/5c9cf44a3300004d003f21df?mocky-delay=5000ms'; // Lista de 8 sensores con las incidencias como array de string
+  private _urlSensorList: string = 'http://www.mocky.io/v2/5c9cf44a3300004d003f21df?mocky-delay=500ms'; // Lista de 8 sensores con las incidencias como array de string
   constructor(private http: HttpClient) { };
 
   private _localUrl: string = '../../assets/data/sensor.json';
