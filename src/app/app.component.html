@@ -8,3 +8,13 @@
                 <list-of-sensors [sensorList]="sensorList"></list-of-sensors>
         </mat-tab>
 </mat-tab-group>
+
+<mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="temperatura" aria-label="Temperatura">
+                <mat-icon svgIcon="temperatura"></mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="incidencias" aria-label="Incidencias">
+                <mat-icon svgIcon="incidencias"></mat-icon>
+        </mat-button-toggle>
+</mat-button-toggle-group>
+<div class="example-selected-value">Selected value: {{group.value}}</div>
