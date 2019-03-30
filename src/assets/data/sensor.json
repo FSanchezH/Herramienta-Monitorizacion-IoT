@@ -1,4 +1,4 @@
-[   
+[
     {
         "id": 1,
         "latitude": 36.72014705451366,
@@ -6,7 +6,9 @@
         "temperatura": "16 ºC",
         "bateria": "80%",
         "cobertura": "-86 dBm",
-        "incidencias": 3
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 1"
+        ]
     },
     {
         "id": 2,
@@ -15,7 +17,9 @@
         "temperatura": "14,8 ºC",
         "bateria": "20%",
         "cobertura": "-80 dBm",
-        "incidencias": 1
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 2"
+        ]
     },
     {
         "id": 3,
@@ -24,7 +28,7 @@
         "temperatura": "14 ºC",
         "bateria": "50%",
         "cobertura": "-78 dBm",
-        "incidencias": 0
+        "incidencias": []
     },
     {
         "id": 4,
@@ -33,7 +37,9 @@
         "temperatura": "15,6 ºC",
         "bateria": "50%",
         "cobertura": "-72 dBm",
-        "incidencias": 2
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 4"
+        ]
     },
     {
         "id": 5,
@@ -42,7 +48,11 @@
         "temperatura": "16 ºC",
         "bateria": "80%",
         "cobertura": "-86 dBm",
-        "incidencias": 3
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 5",
+            "Esto es una incidencia del dispositivo 5",
+            "Esto es una incidencia del dispositivo 5"
+        ]
     },
     {
         "id": 6,
@@ -51,7 +61,10 @@
         "temperatura": "14,8 ºC",
         "bateria": "20%",
         "cobertura": "-80 dBm",
-        "incidencias": 1
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 6",
+            "Esto es una incidencia del dispositivo 6"
+        ]
     },
     {
         "id": 7,
@@ -60,7 +73,7 @@
         "temperatura": "14 ºC",
         "bateria": "50%",
         "cobertura": "-78 dBm",
-        "incidencias": 0
+        "incidencias": []
     },
     {
         "id": 8,
@@ -69,6 +82,11 @@
         "temperatura": "15,6 ºC",
         "bateria": "50%",
         "cobertura": "-72 dBm",
-        "incidencias": 2
+        "incidencias": [
+            "Esto es una incidencia del dispositivo 8",
+            "Esto es una incidencia del dispositivo 8",
+            "Esto es una incidencia del dispositivo 8",
+            "Esto es una incidencia del dispositivo 8"
+        ]
     }
 ]

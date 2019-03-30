@@ -5,5 +5,5 @@ export interface ISensor {
     temperatura: string;
     bateria: string;
     cobertura: string;
-    incidencias: number;
+    incidencias: string[];
 }

@@ -18,19 +18,19 @@ export class SensorComponent implements OnInit {
 
   public ngOnInit() {
     this.chooseIcon();
-    if(this.sensor.incidencias == 0){
+    if(this.sensor.incidencias.length == 0){
       this.isDisabled = true;
     }
   }
 
   private chooseIcon() {
-    if (this.sensor.incidencias < 1) {
+    if (this.sensor.incidencias.length < 1) {
       this.icono = './assets/images/signal_0_incidencia.png';
-    } else if (this.sensor.incidencias < 2) {
+    } else if (this.sensor.incidencias.length < 2) {
       this.icono = './assets/images/signal_1_incidencia.png';
-    } else if (this.sensor.incidencias < 3) {
+    } else if (this.sensor.incidencias.length < 3) {
       this.icono = './assets/images/signal_2_incidencia.png';
-    } else if (this.sensor.incidencias < 4) {
+    } else if (this.sensor.incidencias.length < 4) {
       this.icono = './assets/images/signal_3_incidencia.png';
     } else {
       this.icono = './assets/images/signal_3+_incidencia.png';
@@ -39,6 +39,7 @@ export class SensorComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(PopupComponent,{
+      disableClose: true,
       data: this.sensor
     });
 

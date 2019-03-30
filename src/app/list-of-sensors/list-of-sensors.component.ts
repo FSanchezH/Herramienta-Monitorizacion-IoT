@@ -25,7 +25,7 @@ export class ListOfSensorsComponent implements AfterContentChecked {
     this.dataSource = new MatTableDataSource(this.sensorList);
     this.dataSource.sort = this.sort;
     for (let sensor of this.sensorList){
-      if(sensor.incidencias == 0){
+      if(sensor.incidencias.length == 0){
         this.isDisabled[sensor.id]=true;
       }else{
         this.isDisabled[sensor.id]=false;
@@ -35,6 +35,7 @@ export class ListOfSensorsComponent implements AfterContentChecked {
 
   openDialog(sensor: ISensor): void {
     let dialogRef = this.dialog.open(PopupComponent,{
+      disableClose: true,
       data: sensor
     });
 

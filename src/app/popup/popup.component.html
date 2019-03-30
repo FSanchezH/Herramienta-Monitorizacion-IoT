@@ -1,10 +1,11 @@
-<h2 mat-dialog-title>Pac mola</h2>
+<h2 mat-dialog-title>Lista de incidencias del sensor {{data.id}}</h2>
 <mat-dialog-content>
-  <p>Hi from Pac's house</p>
-  <p>Este es el id del sensor: {{data.id}}</p>
+  <li *ngFor="let incidencia of data.incidencias">
+    {{incidencia}}
+  </li>
 </mat-dialog-content>
 <mat-dialog-actions>
   <div style="text-align: center; margin: auto">
-    <button mat-raised-button mat-dialog-close color="accent">Leave Pac's house</button>
+    <button mat-raised-button mat-dialog-close>Cerrar</button>
   </div>
 </mat-dialog-actions>
