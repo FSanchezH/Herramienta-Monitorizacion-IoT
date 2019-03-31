@@ -13,7 +13,7 @@ import { PopupComponent } from '../popup/popup.component';
 export class ListOfSensorsComponent implements AfterContentChecked {
   constructor(private sensorService: SensorService, public dialog: MatDialog) { }
   @Input() sensorList: ISensor[] = [];
-  public displayedColumns: string[] = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
+  public displayedColumns: string[] = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
   public dataSource = new MatTableDataSource();
   public isDisabled: boolean[] = [];
   @ViewChild(MatSort) sort: MatSort;

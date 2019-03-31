@@ -10,10 +10,10 @@
 </mat-tab-group>
 
 <mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle value="temperatura" aria-label="Temperatura">
+        <mat-button-toggle value="temperatura" aria-label="Temperatura" (click)="soloTemperatura()">
                 <mat-icon svgIcon="temperatura"></mat-icon>
         </mat-button-toggle>
-        <mat-button-toggle value="incidencias" aria-label="Incidencias">
+        <mat-button-toggle value="incidencias" aria-label="Incidencias" (click)="soloIncidencias()">
                 <mat-icon svgIcon="incidencias"></mat-icon>
         </mat-button-toggle>
 </mat-button-toggle-group>

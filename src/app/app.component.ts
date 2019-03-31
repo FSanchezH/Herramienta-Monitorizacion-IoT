@@ -23,4 +23,15 @@ export class AppComponent implements OnInit {
     this.sensorService.getSensors()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
+
+  soloIncidencias(){
+    this.sensorService.getSensorsIncidencias()
+      .subscribe(data => this.sensorList = data); //Cargo lista de sensores
+  }
+
+  soloTemperatura(){
+    this.sensorService.getSensorsTemperatura()
+      .subscribe(data => this.sensorList = data); //Cargo lista de sensores
+  }
+
 }
