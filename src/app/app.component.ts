@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'incidencias',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/incidencias.svg'));
+    iconRegistry.addSvgIcon(
+      'todos',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/funnel.svg'));
   }
 
   public sensorList = [];
@@ -24,12 +27,12 @@ export class AppComponent implements OnInit {
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
 
-  soloIncidencias(){
+  soloIncidencias() {
     this.sensorService.getSensorsIncidencias()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
 
-  soloTemperatura(){
+  soloTemperatura() {
     this.sensorService.getSensorsTemperatura()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }

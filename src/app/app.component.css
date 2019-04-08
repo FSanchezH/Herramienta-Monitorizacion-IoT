@@ -2,3 +2,12 @@ mat-icon {
     width: 32px;
     height: 32px
 }
+
+.footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: right; 
+}

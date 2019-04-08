@@ -1,5 +1,4 @@
 <h1>Herramienta de Monitorización IoT</h1>
-
 <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
         <mat-tab label="Mapa de sensores de Teatinos">
                 <map [sensorList]="sensorList"></map>
@@ -8,13 +7,26 @@
                 <list-of-sensors [sensorList]="sensorList"></list-of-sensors>
         </mat-tab>
 </mat-tab-group>
-
-<mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle value="temperatura" aria-label="Temperatura" (click)="soloTemperatura()">
-                <mat-icon svgIcon="temperatura"></mat-icon>
-        </mat-button-toggle>
-        <mat-button-toggle value="incidencias" aria-label="Incidencias" (click)="soloIncidencias()">
-                <mat-icon svgIcon="incidencias"></mat-icon>
-        </mat-button-toggle>
-</mat-button-toggle-group>
-<div class="example-selected-value">Selected value: {{group.value}}</div>
+<br />
+<div style="text-align:center">
+        <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
+                <mat-button-toggle value="Todos" aria-label="Todos" (click)="soloTemperatura()" value="Todos">
+                        <mat-icon svgIcon="todos"></mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle aria-label="Temperatura" (click)="soloTemperatura()" value="Temperatura">
+                        <mat-icon svgIcon="temperatura"></mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle aria-label="Incidencias" (click)="soloIncidencias()" value="Incidencias">
+                        <mat-icon svgIcon="incidencias"></mat-icon>
+                </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-selected-value">Mostrando: {{group.value}}</div>
+</div>
+<footer class="footer">
+        <div style="font-size: 8px; text-align:right">Icons made by
+                <a href="https://www.freepik.com/" title="Freepik">Freepik</a> and
+                <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a> from
+                <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </div>
+</footer>
