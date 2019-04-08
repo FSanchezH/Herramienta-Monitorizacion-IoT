@@ -6,5 +6,5 @@ export interface ISensor {
     humedad?: string;
     bateria: string;
     cobertura: string;
-    incidencias?: string[];
+    incidencias: string[];
 }
