@@ -1,7 +1,6 @@
-import { Component, ViewChild, Input, AfterContentChecked } from '@angular/core';
+import { Component, ViewChild, Input, OnInit, AfterContentChecked } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
 import { MatSort, MatTableDataSource, MatPaginator, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { SensorService } from '../services/sensor.service';
 import { PopupComponent } from '../popup/popup.component';
 
 @Component({
@@ -11,13 +10,32 @@ import { PopupComponent } from '../popup/popup.component';
 })
 
 export class ListOfSensorsComponent implements AfterContentChecked {
-  constructor(private sensorService: SensorService, public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
   @Input() sensorList: ISensor[] = [];
+  @Input() filter: String;
   public displayedColumns: string[] = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
   public dataSource = new MatTableDataSource();
   public isDisabled: boolean[] = [];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    switch (this.filter){
+      case "Todos":
+        this.displayedColumns = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      case "Temperatura":
+        this.displayedColumns = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      case "Incidencias":
+        this.displayedColumns = ['id', 'humedad', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      default:
+        break; 
+    }
+  }
 
   ngAfterContentChecked(): void {
     //Called after every check of the component's or directive's content.
@@ -30,6 +48,19 @@ export class ListOfSensorsComponent implements AfterContentChecked {
       }else{
         this.isDisabled[sensor.id]=false;
       }
+    }
+    switch (this.filter){
+      case "Todos":
+        this.displayedColumns = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      case "Temperatura":
+        this.displayedColumns = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      case "Incidencias":
+        this.displayedColumns = ['id', 'humedad', 'bateria', 'cobertura', 'incidencias'];
+        break;
+      default:
+        break; 
     }
   }
 

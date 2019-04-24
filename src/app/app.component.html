@@ -4,19 +4,22 @@
                 <map [sensorList]="sensorList"></map>
         </mat-tab>
         <mat-tab label="Lista de sensores de Teatinos">
-                <list-of-sensors [sensorList]="sensorList"></list-of-sensors>
+                <list-of-sensors [sensorList]="sensorList" [filter]="filter"></list-of-sensors>
         </mat-tab>
 </mat-tab-group>
 <br />
-<div style="text-align:center">
+<div  class="botones">
         <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
-                <mat-button-toggle value="Todos" aria-label="Todos" (click)="soloTemperatura()" value="Todos">
+                <mat-button-toggle aria-label="Todos" (click)="sinFiltros(group.value)" value="Todos">
                         <mat-icon svgIcon="todos"></mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle aria-label="Temperatura" (click)="soloTemperatura()" value="Temperatura">
+                <mat-button-toggle aria-label="Temperatura" (click)="soloTemperatura(group.value)" value="Temperatura">
                         <mat-icon svgIcon="temperatura"></mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle aria-label="Incidencias" (click)="soloIncidencias()" value="Incidencias">
+                <mat-button-toggle aria-label="Humedad" (click)="soloHumedad(group.value)" value="Humedad">
+                        <mat-icon svgIcon="humedad"></mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle aria-label="Incidencias" (click)="soloIncidencias(group.value)" value="Incidencias">
                         <mat-icon svgIcon="incidencias"></mat-icon>
                 </mat-button-toggle>
         </mat-button-toggle-group>

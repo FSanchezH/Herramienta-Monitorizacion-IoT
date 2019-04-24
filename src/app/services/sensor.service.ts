@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class SensorService {
-  private _urlSensorListIncidencias: string = 'http://www.mocky.io/v2/5ca0a7f93700004e00899161'; // Lista de 4 sensores con las incidencias como números
-  // private _urlSensorList: string = 'http://www.mocky.io/v2/5c8fff4f3600004b00f0ffed'; Lista de 8 sensores con las incidencias como números
-  // private _urlSensorList: string = 'http://www.mocky.io/v2/5c9cf44a3300004d003f21df'; // Lista de 8 sensores con las incidencias como array de string
   private _urlSensorList: string = 'http://www.mocky.io/v2/5cab758f300000fd001030fe'; // Mezcla de sensores (Humedad y temperatura) 
+  private _urlSensorListTemperatura: string = 'http://www.mocky.io/v2/5cc0882a310000eb430363f1'; // Lista de sensores filtrados por solo Temeperatura
+  private _urlSensorListHumedad: string = 'http://www.mocky.io/v2/5cc0897d310000580b0363f9'; //Lista de sensores filtrados por solo Humedad
+  private _urlSensorListIncidencias: string = 'http://www.mocky.io/v2/5cc08d26310000eb4303640d'; //Lista de sensores filtrados por solo Incidencias
   constructor(private http: HttpClient) { };
 
   private _localUrl: string = '../../assets/data/sensor.json';
@@ -18,10 +18,14 @@ export class SensorService {
   }
 
   public getSensorsTemperatura(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>(this._urlSensorList);
+    return this.http.get<ISensor[]>(this._urlSensorListTemperatura);
   }
   
   public getSensorsIncidencias(): Observable<ISensor[]> {
     return this.http.get<ISensor[]>(this._urlSensorListIncidencias);
+  }
+
+  public getSensorsHumedad(): Observable<ISensor[]> {
+    return this.http.get<ISensor[]>(this._urlSensorListHumedad);
   }
 }

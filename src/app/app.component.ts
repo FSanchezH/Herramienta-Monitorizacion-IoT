@@ -9,6 +9,8 @@ import { MatIconRegistry } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  public sensorList = [];
+  public filter: String = "Todos";
   constructor(private sensorService: SensorService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'temperatura',
@@ -19,21 +21,41 @@ export class AppComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'todos',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/funnel.svg'));
+    iconRegistry.addSvgIcon(
+      'humedad',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/humidity.svg'));
   }
 
-  public sensorList = [];
   ngOnInit(): void {
     this.sensorService.getSensors()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
 
-  soloIncidencias() {
+  sinFiltros(filter: String) {
+    console.log(filter);
+    this.filter = filter;
+    this.sensorService.getSensors()
+      .subscribe(data => this.sensorList = data); //Cargo lista de sensores
+  }
+
+  soloIncidencias(filter: String) {
+    console.log(filter);
+    this.filter = filter;
     this.sensorService.getSensorsIncidencias()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
 
-  soloTemperatura() {
+  soloTemperatura(filter: String) {
+    console.log(filter);
+    this.filter = filter;
     this.sensorService.getSensorsTemperatura()
+      .subscribe(data => this.sensorList = data); //Cargo lista de sensores
+  }
+
+  soloHumedad(filter: String) {
+    console.log(filter);
+    this.filter = filter;
+    this.sensorService.getSensorsHumedad()
       .subscribe(data => this.sensorList = data); //Cargo lista de sensores
   }
 
