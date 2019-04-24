@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input, OnInit, AfterContentChecked } from '@angular/core';
+import { Component, ViewChild, Input, AfterContentChecked } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
 import { MatSort, MatTableDataSource, MatPaginator, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PopupComponent } from '../popup/popup.component';
@@ -19,53 +19,38 @@ export class ListOfSensorsComponent implements AfterContentChecked {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    switch (this.filter){
-      case "Todos":
-        this.displayedColumns = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
-        break;
-      case "Temperatura":
-        this.displayedColumns = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
-        break;
-      case "Incidencias":
-        this.displayedColumns = ['id', 'humedad', 'bateria', 'cobertura', 'incidencias'];
-        break;
-      default:
-        break; 
-    }
-  }
-
   ngAfterContentChecked(): void {
     //Called after every check of the component's or directive's content.
     //Add 'implements AfterContentChecked' to the class.
     this.dataSource = new MatTableDataSource(this.sensorList);
     this.dataSource.sort = this.sort;
-    for (let sensor of this.sensorList){
-      if(sensor.incidencias.length == 0){
-        this.isDisabled[sensor.id]=true;
-      }else{
-        this.isDisabled[sensor.id]=false;
+    for (let sensor of this.sensorList) {
+      if (sensor.incidencias.length == 0) {
+        this.isDisabled[sensor.id] = true;
+      } else {
+        this.isDisabled[sensor.id] = false;
       }
     }
-    switch (this.filter){
+    switch (this.filter) {
       case "Todos":
         this.displayedColumns = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
         break;
       case "Temperatura":
         this.displayedColumns = ['id', 'temperatura', 'bateria', 'cobertura', 'incidencias'];
         break;
-      case "Incidencias":
+      case "Humedad":
         this.displayedColumns = ['id', 'humedad', 'bateria', 'cobertura', 'incidencias'];
         break;
+      case "Incidencias":
+        this.displayedColumns = ['id', 'temperatura', 'humedad', 'bateria', 'cobertura', 'incidencias'];
+        break;
       default:
-        break; 
+        break;
     }
   }
 
   openDialog(sensor: ISensor): void {
-    let dialogRef = this.dialog.open(PopupComponent,{
+    let dialogRef = this.dialog.open(PopupComponent, {
       disableClose: true,
       data: sensor
     });

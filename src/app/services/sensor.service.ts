@@ -20,7 +20,7 @@ export class SensorService {
   public getSensorsTemperatura(): Observable<ISensor[]> {
     return this.http.get<ISensor[]>(this._urlSensorListTemperatura);
   }
-  
+
   public getSensorsIncidencias(): Observable<ISensor[]> {
     return this.http.get<ISensor[]>(this._urlSensorListIncidencias);
   }
