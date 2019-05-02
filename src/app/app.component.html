@@ -1,15 +1,17 @@
 <body>
-        <header>
+        <header id="header_appRoot">
                 <h1 style="text-align: center">Herramienta de Monitorización IoT</h1>
         </header>
-        <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
-                <mat-tab label="Mapa de sensores de Teatinos">
-                        <map [sensorList]="sensorList"></map>
-                </mat-tab>
-                <mat-tab label="Lista de sensores de Teatinos">
-                        <list-of-sensors [sensorList]="sensorList" [filter]="filter"></list-of-sensors>
-                </mat-tab>
-        </mat-tab-group>
+        <div class="tab-group">
+                <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
+                        <mat-tab label="Mapa">
+                                <map [sensorList]="sensorList"></map>
+                        </mat-tab>
+                        <mat-tab label="Listado">
+                                <list-of-sensors [sensorList]="sensorList" [filter]="filter"></list-of-sensors>
+                        </mat-tab>
+                </mat-tab-group>
+        </div>
         <br />
         <div class="botones">
                 <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
@@ -28,7 +30,7 @@
                                 <mat-icon id="icons" svgIcon="incidencias"></mat-icon>
                         </mat-button-toggle>
                 </mat-button-toggle-group>
-                <div class="example-selected-value">Mostrando: {{group.value}}</div>
+                <div class="selected-value">Mostrando: {{group.value}}</div>
         </div>
         <footer class="footer">
                 <div style="font-size: 8px; text-align:right">Icons made by

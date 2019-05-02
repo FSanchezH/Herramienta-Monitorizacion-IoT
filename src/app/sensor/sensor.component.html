@@ -6,7 +6,7 @@
     [animation]="'DROP'">
     <agm-info-window
       [maxWidth]="200">
-        <h2>Este es el sensor número: <strong>{{sensor.id}}</strong></h2>
+        <h2>Dispositivo número: <strong>{{sensor.id}}</strong></h2>
         <div class="myDiv" *ngIf="sensor.temperatura"><strong>Temperatura: </strong>{{sensor.temperatura}}</div>
         <div class="myDiv" *ngIf= "sensor.humedad"><strong>Humedad: </strong>{{sensor.humedad}}</div>
         <div class="myDiv"><strong>Batería: </strong>{{sensor.bateria}}</div>
