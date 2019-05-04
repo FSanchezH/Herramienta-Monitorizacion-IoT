@@ -4,10 +4,18 @@
         </header>
         <div class="tab-group">
                 <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
-                        <mat-tab label="Mapa">
+                        <mat-tab>
+                                <ng-template mat-tab-label>
+                                        <mat-icon class="tab-icon" svgIcon="map">list</mat-icon>
+                                        Mapa
+                                </ng-template>
                                 <map [sensorList]="sensorList"></map>
                         </mat-tab>
-                        <mat-tab label="Listado">
+                        <mat-tab>
+                                <ng-template mat-tab-label>
+                                        <mat-icon class="tab-icon" svgIcon="list">list</mat-icon>
+                                        Listado
+                                </ng-template>
                                 <list-of-sensors [sensorList]="sensorList" [filter]="filter"></list-of-sensors>
                         </mat-tab>
                 </mat-tab-group>
@@ -34,7 +42,8 @@
         </div>
         <footer class="footer">
                 <div style="font-size: 8px; text-align:right">Icons made by
-                        <a href="https://www.freepik.com/" title="Freepik">Freepik</a> and
+                        <a href="https://www.freepik.com/" title="Freepik">Freepik</a> &
+                        <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> &
                         <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a> from
                         <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by
                         <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"

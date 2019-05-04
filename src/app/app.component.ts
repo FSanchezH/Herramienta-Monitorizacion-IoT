@@ -6,7 +6,7 @@ import { MatIconRegistry } from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   public sensorList = [];
@@ -24,6 +24,12 @@ export class AppComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'humedad',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/humidity.svg'));
+    iconRegistry.addSvgIcon(
+      'list',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/list.svg'));
+    iconRegistry.addSvgIcon(
+      'map',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icon/map.svg'));
   }
 
   ngOnInit(): void {
