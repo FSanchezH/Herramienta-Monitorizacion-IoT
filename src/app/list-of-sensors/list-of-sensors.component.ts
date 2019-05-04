@@ -6,7 +6,7 @@ import { PopupComponent } from '../popup/popup.component';
 @Component({
   selector: 'list-of-sensors',
   templateUrl: './list-of-sensors.component.html',
-  styleUrls: ['./list-of-sensors.component.css']
+  styleUrls: ['./list-of-sensors.component.scss']
 })
 
 export class ListOfSensorsComponent implements AfterContentChecked {
