@@ -45,3 +45,7 @@ body, input[type="text"], button {
 .mat-tab-labels{
   background-color: white;
 }
+
+.mat-sort-header-container.mat-sort-header-sorted{
+  font-weight: bold;
+}
