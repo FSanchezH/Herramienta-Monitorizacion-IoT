@@ -1,55 +1,62 @@
 <body>
-        <header id="header_appRoot">
-                <div>
-                        <h1 id="cabecera">Monitorización IoT</h1>
+        <div id="page-container">
+                <div id="content-wrap">
+                        <header id="header_appRoot">
+                                <div>
+                                        <h1 id="cabecera">Monitorización IoT</h1>
+                                </div>
+                        </header>
+                        <div class="tab-group">
+                                <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
+                                        <mat-tab>
+                                                <ng-template mat-tab-label>
+                                                        <mat-icon class="tab-icon" svgIcon="map">list</mat-icon>
+                                                        Mapa
+                                                </ng-template>
+                                                <map [sensorList]="sensorList"></map>
+                                        </mat-tab>
+                                        <mat-tab>
+                                                <ng-template mat-tab-label>
+                                                        <mat-icon class="tab-icon" svgIcon="list">list</mat-icon>
+                                                        Listado
+                                                </ng-template>
+                                                <list-of-sensors [sensorList]="sensorList" [filter]="filter">
+                                                </list-of-sensors>
+                                        </mat-tab>
+                                </mat-tab-group>
+                        </div>
+                        <br />
+                        <div class="botones">
+                                <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
+                                        <mat-button-toggle aria-label="Todos" (click)="sinFiltros(group.value)"
+                                                value="Todos">
+                                                <mat-icon id="icons" svgIcon="todos"></mat-icon>
+                                        </mat-button-toggle>
+                                        <mat-button-toggle aria-label="Temperatura"
+                                                (click)="soloTemperatura(group.value)" value="Temperatura">
+                                                <mat-icon id="icons" svgIcon="temperatura"></mat-icon>
+                                        </mat-button-toggle>
+                                        <mat-button-toggle aria-label="Humedad" (click)="soloHumedad(group.value)"
+                                                value="Humedad">
+                                                <mat-icon id="icons" svgIcon="humedad"></mat-icon>
+                                        </mat-button-toggle>
+                                        <mat-button-toggle aria-label="Incidencias"
+                                                (click)="soloIncidencias(group.value)" value="Incidencias">
+                                                <mat-icon id="icons" svgIcon="incidencias"></mat-icon>
+                                        </mat-button-toggle>
+                                </mat-button-toggle-group>
+                                <div class="selected-value">Mostrando: {{group.value}}</div>
+                        </div>
                 </div>
-        </header>
-        <div class="tab-group">
-                <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
-                        <mat-tab>
-                                <ng-template mat-tab-label>
-                                        <mat-icon class="tab-icon" svgIcon="map">list</mat-icon>
-                                        Mapa
-                                </ng-template>
-                                <map [sensorList]="sensorList"></map>
-                        </mat-tab>
-                        <mat-tab>
-                                <ng-template mat-tab-label>
-                                        <mat-icon class="tab-icon" svgIcon="list">list</mat-icon>
-                                        Listado
-                                </ng-template>
-                                <list-of-sensors [sensorList]="sensorList" [filter]="filter"></list-of-sensors>
-                        </mat-tab>
-                </mat-tab-group>
+                <footer id="footer">
+                        <div style="font-size: 8px; text-align:right">Icons made by
+                                <a href="https://www.freepik.com/" title="Freepik">Freepik</a> &
+                                <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> &
+                                <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a> from
+                                <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by
+                                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                                        target="_blank">CC 3.0 BY</a>
+                        </div>
+                </footer>
         </div>
-        <br />
-        <div class="botones">
-                <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
-                        <mat-button-toggle aria-label="Todos" (click)="sinFiltros(group.value)" value="Todos">
-                                <mat-icon id="icons" svgIcon="todos"></mat-icon>
-                        </mat-button-toggle>
-                        <mat-button-toggle aria-label="Temperatura" (click)="soloTemperatura(group.value)"
-                                value="Temperatura">
-                                <mat-icon id="icons" svgIcon="temperatura"></mat-icon>
-                        </mat-button-toggle>
-                        <mat-button-toggle aria-label="Humedad" (click)="soloHumedad(group.value)" value="Humedad">
-                                <mat-icon id="icons" svgIcon="humedad"></mat-icon>
-                        </mat-button-toggle>
-                        <mat-button-toggle aria-label="Incidencias" (click)="soloIncidencias(group.value)"
-                                value="Incidencias">
-                                <mat-icon id="icons" svgIcon="incidencias"></mat-icon>
-                        </mat-button-toggle>
-                </mat-button-toggle-group>
-                <div class="selected-value">Mostrando: {{group.value}}</div>
-        </div>
-        <footer class="footer">
-                <div style="font-size: 8px; text-align:right">Icons made by
-                        <a href="https://www.freepik.com/" title="Freepik">Freepik</a> &
-                        <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> &
-                        <a href="https://www.flaticon.com/authors/phatplus" title="phatplus">phatplus</a> from
-                        <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by
-                        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                                target="_blank">CC 3.0 BY</a>
-                </div>
-        </footer>
 </body>
