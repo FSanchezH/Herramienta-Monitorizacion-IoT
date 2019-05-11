@@ -18,14 +18,12 @@ export class SensorComponent implements OnInit {
 
   public ngOnInit() {
     this.chooseIcon();
-    if(this.sensor.incidencias.length == 0){
-      this.isDisabled = true;
-    }
   }
 
   private chooseIcon() {
     if (this.sensor.incidencias.length < 1) {
       this.icono = './assets/img/marker/signal_0_incidencia.png';
+      this.isDisabled = true;
     } else if (this.sensor.incidencias.length < 2) {
       this.icono = './assets/img/marker/signal_1_incidencia.png';
     } else if (this.sensor.incidencias.length < 3) {
