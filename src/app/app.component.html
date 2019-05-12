@@ -3,10 +3,9 @@
                 <div id="content-wrap">
                         <header id="header_appRoot">
                                 <div>
-                                        <h1 id="cabecera">Monitorización IoT</h1>
+                                        <h1 id="cabecera">Visor IoT</h1>
                                 </div>
                         </header>
-                        <div class="tab-group">
                                 <mat-tab-group id="my-tab-group" mat-align-tabs="start" animationDuration="750ms">
                                         <mat-tab>
                                                 <ng-template mat-tab-label>
@@ -24,7 +23,6 @@
                                                 </list-of-sensors>
                                         </mat-tab>
                                 </mat-tab-group>
-                        </div>
                         <div class="botones">
                                 <mat-button-toggle-group #group="matButtonToggleGroup" value="Todos">
                                         <mat-button-toggle aria-label="Todos" (click)="sinFiltros(group.value)"
