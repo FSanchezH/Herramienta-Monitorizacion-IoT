@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ISensor } from '../interfaces/sensor';
 import { Observable } from 'rxjs';
+
+const headers = new HttpHeaders({
+  "Fiware-Service": "smart_campus_uma",
+  "Fiware-ServicePath": "/tfg_visor_iot"
+});
 
 @Injectable()
 export class SensorService {
@@ -14,7 +19,7 @@ export class SensorService {
   private _localUrl: string = '../../assets/data/sensor.json';
 
   public getSensors(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>(this._urlSensorList);
+    return this.http.get<ISensor[]>('/v2/entities?options=keyValues',{headers});
   }
 
   public getSensorsTemperatura(): Observable<ISensor[]> {
