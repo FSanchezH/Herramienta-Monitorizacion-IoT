@@ -44,7 +44,7 @@ import { PopupComponent } from './popup/popup.component';
     MatButtonToggleModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC7vUp4j4mQ75e6V6A0rWpa9CY8SSrkD7A',  //La key es necesaria para que funcione
+      apiKey: 'AIzaSyC7vUp4j4mQ75e6V6A0rWpa9CY8SSrkD7A',  //The key is necessary
     })
   ],
   providers: [SensorService],
