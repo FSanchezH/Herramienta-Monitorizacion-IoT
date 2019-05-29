@@ -29,7 +29,7 @@
     <ng-container matColumnDef="incidencias">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Incidencias </th>
       <td mat-cell *matCellDef="let sensor"><button mat-button (click)="openDialog(sensor)"
-          disabled={{isDisabled[sensor.id]}} color="warn">{{sensor.incidencias.length}}</button></td>
+          disabled={{isDisabled[sensor.id]}} color="warn">{{sensor.lista_incidencias.length}}</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

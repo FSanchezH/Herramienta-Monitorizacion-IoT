@@ -25,7 +25,15 @@ export class ListOfSensorsComponent implements AfterContentChecked {
     this.dataSource = new MatTableDataSource(this.sensorList);
     this.dataSource.sort = this.sort;
     for (let sensor of this.sensorList) {
-      if (sensor.incidencias.length == 0) {
+      if(sensor.incidencias == "[]"){
+        sensor.lista_incidencias = [];
+      }else{
+        sensor.lista_incidencias = sensor.incidencias.split(',');
+      }
+      if (sensor.lista_incidencias.length == 0) {
+        if(this.filter == "Incidencias"){
+          this.sensorList.splice(sensor.id,1);
+        }
         this.isDisabled[sensor.id] = true;
       } else {
         this.isDisabled[sensor.id] = false;

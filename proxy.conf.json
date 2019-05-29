@@ -1,6 +1,6 @@
 {
   "/v2/entities*": {
-    "target": "https://150.214.58.178:11026",
+    "target": "https://150.214.58.178:2026",
     "secure": false,
     "changeOrigin": true
   }

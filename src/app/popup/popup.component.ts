@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material'
 import { ISensor } from '../interfaces/sensor';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-popup',
