@@ -3,12 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ISensor } from '../interfaces/sensor';
 import { Observable } from 'rxjs';
 
-const headers = new HttpHeaders({
-  "Fiware-Service": "smart_campus_uma",
-  "Fiware-ServicePath": "/tfg_visor_iot",
-  "X-Auth-Token":"09123842be124e2eac0df0c5e707ed16"
-});
-
 @Injectable()
 export class SensorService {
   private _urlSensorList: string = 'http://www.mocky.io/v2/5cd6f9cd3000004a40606201'; // Mezcla de sensores (Humedad y temperatura) 
@@ -18,20 +12,78 @@ export class SensorService {
   constructor(private http: HttpClient) { };
 
   private _localUrl: string = '../../assets/data/sensor.json';
-
+  
+  private token: string;
   public getSensors(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>('/v2/entities?options=keyValues',{headers});
+    this.getTokenAuthentication();
+    return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=temperatura,mixta,humedad', {
+      headers: new HttpHeaders({
+        'Fiware-Service': 'smart_campus_uma',
+        'Fiware-ServicePath': '/tfg_visor_iot',
+        'X-Auth-Token': this.token
+      })
+    });
   }
 
   public getSensorsTemperatura(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>('/v2/entities?options=keyValues&type=temperatura,mixta',{headers});
+    return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=temperatura,mixta', {
+      headers: new HttpHeaders({
+        'Fiware-Service': 'smart_campus_uma',
+        'Fiware-ServicePath': '/tfg_visor_iot',
+        'X-Auth-Token': this.token
+      })
+    });
   }
 
   public getSensorsIncidencias(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>('/v2/entities?options=keyValues&orderBy=incidencias',{headers});
+    return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=temperatura,mixta,humedad&orderBy=incidencias', {
+      headers: new HttpHeaders({
+        'Fiware-Service': 'smart_campus_uma',
+        'Fiware-ServicePath': '/tfg_visor_iot',
+        'X-Auth-Token': this.token
+      })
+    });
   }
 
   public getSensorsHumedad(): Observable<ISensor[]> {
-    return this.http.get<ISensor[]>('/v2/entities?options=keyValues&type=humedad,mixta',{headers});
+    return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=humedad,mixta', {
+      headers: new HttpHeaders({
+        'Fiware-Service': 'smart_campus_uma',
+        'Fiware-ServicePath': '/tfg_visor_iot',
+        'X-Auth-Token': this.token
+      })
+    });
+  }
+
+  private getTokenAuthentication(): any {
+    this.http.post<any>('https://150.214.58.178:6001/v3/auth/tokens',
+      {
+        "auth": {
+          "identity": {
+            "methods": [
+              "password"
+            ],
+            "password": {
+              "user": {
+                "domain": {
+                  "name": "smart_campus_uma"
+                },
+                "name": "emil",
+                "password": "2vPUvKyR"
+              }
+            }
+          },
+          "scope": {
+            "project": {
+              "domain": {
+                "name": "smart_campus_uma"
+              },
+              "name": "/tfg_visor_iot"
+            }
+          }
+        }
+      },{observe: 'response'}).subscribe(resp => {
+        this.token = resp.headers.get('X-Subject-Token');
+      })
   }
 }

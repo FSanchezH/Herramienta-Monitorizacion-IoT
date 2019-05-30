@@ -32,7 +32,8 @@ export class ListOfSensorsComponent implements AfterContentChecked {
       }
       if (sensor.lista_incidencias.length == 0) {
         if(this.filter == "Incidencias"){
-          this.sensorList.splice(sensor.id,1);
+         let index = this.sensorList.indexOf(sensor)
+          this.sensorList.splice(index,1);
         }
         this.isDisabled[sensor.id] = true;
       } else {
