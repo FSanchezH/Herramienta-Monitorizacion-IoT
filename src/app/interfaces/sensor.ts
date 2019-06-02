@@ -10,4 +10,5 @@ export interface ISensor {
     cobertura: string;
     incidencias: string;
     lista_incidencias?: string[];
+    cantidad_incidencias?: number;
 }
