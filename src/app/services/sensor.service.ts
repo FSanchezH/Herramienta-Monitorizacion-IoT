@@ -13,9 +13,11 @@ export class SensorService {
 
   private _localUrl: string = '../../assets/data/sensor.json';
   
-  private token: string;
+  private token: string = null;
   public getSensors(): Observable<ISensor[]> {
-    this.getTokenAuthentication();
+    if(this.token == null){
+      this.getTokenAuthentication();
+    }
     return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=temperatura,mixta,humedad', {
       headers: new HttpHeaders({
         'Fiware-Service': 'smart_campus_uma',

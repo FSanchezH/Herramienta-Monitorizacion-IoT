@@ -7,23 +7,23 @@
     </ng-container>
 
     <ng-container matColumnDef="temperatura">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Temperatura (ºC)</th>
-      <td mat-cell *matCellDef="let sensor"> {{sensor.temperatura}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Temperatura </th>
+      <td mat-cell *matCellDef="let sensor"> {{sensor.temperatura}}&nbsp; <div style="display: inline; " *ngIf="sensor.temperatura">ºC</div> </td>
     </ng-container>
 
     <ng-container matColumnDef="humedad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Humedad (%)</th>
-      <td mat-cell *matCellDef="let sensor"> {{sensor.humedad}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Humedad </th>
+      <td mat-cell *matCellDef="let sensor"> {{sensor.humedad}}&nbsp;<div style="display: inline; " *ngIf="sensor.humedad">%</div> </td>
     </ng-container>
 
     <ng-container matColumnDef="bateria">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Batería (%)</th>
-      <td mat-cell *matCellDef="let sensor"> {{sensor.bateria}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Batería </th>
+      <td mat-cell *matCellDef="let sensor"> {{sensor.bateria}}&nbsp;% </td>
     </ng-container>
 
     <ng-container matColumnDef="cobertura">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Cobertura (%)</th>
-      <td mat-cell *matCellDef="let sensor"> {{sensor.cobertura}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Cobertura </th>
+      <td mat-cell *matCellDef="let sensor"> {{sensor.cobertura}}&nbsp;% </td>
     </ng-container>
 
     <ng-container matColumnDef="incidencias">
