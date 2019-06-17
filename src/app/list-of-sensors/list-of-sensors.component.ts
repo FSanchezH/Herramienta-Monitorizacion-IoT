@@ -1,6 +1,6 @@
 import { Component, ViewChild, Input, AfterContentChecked } from '@angular/core';
 import { ISensor } from '../interfaces/sensor';
-import { MatSort, MatTableDataSource, MatPaginator, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatSort, MatTableDataSource, MatPaginator, MatDialog } from '@angular/material';
 import { PopupComponent } from '../popup/popup.component';
 
 @Component({
@@ -68,7 +68,7 @@ export class ListOfSensorsComponent implements AfterContentChecked {
       data: sensor
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
     });
   }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SensorService } from "../services/sensor.service";
 import { ISensor } from '../interfaces/sensor';
 
 @Component({
@@ -8,7 +7,7 @@ import { ISensor } from '../interfaces/sensor';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  constructor(private sensorService: SensorService) { }
+  constructor() { }
   latitude: number;
   longitude: number;
   zoom: number;

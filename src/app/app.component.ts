@@ -33,8 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sensorService.getSensors()
-      .subscribe(data => this.sensorList = data); //Cargo lista de sensores
+    this.sensorService.getTokenAuthentication(); //Obtengo token
   }
 
   sinFiltros(filter: String) {

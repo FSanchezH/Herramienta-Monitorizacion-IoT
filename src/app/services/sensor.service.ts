@@ -15,9 +15,6 @@ export class SensorService {
   
   private token: string = null;
   public getSensors(): Observable<ISensor[]> {
-    if(this.token == null){
-      this.getTokenAuthentication();
-    }
     return this.http.get<ISensor[]>('https://150.214.58.178:2026/v2/entities?options=keyValues&type=temperatura,mixta,humedad', {
       headers: new HttpHeaders({
         'Fiware-Service': 'smart_campus_uma',
@@ -57,7 +54,7 @@ export class SensorService {
     });
   }
 
-  private getTokenAuthentication(): any {
+  public getTokenAuthentication(): void {
     this.http.post<any>('https://150.214.58.178:6001/v3/auth/tokens',
       {
         "auth": {
@@ -86,6 +83,6 @@ export class SensorService {
         }
       },{observe: 'response'}).subscribe(resp => {
         this.token = resp.headers.get('X-Subject-Token');
-      })
+      });
   }
 }
