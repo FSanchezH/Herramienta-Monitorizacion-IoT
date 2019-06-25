@@ -1,0 +1,48 @@
+[
+    {
+        "id": "2",
+        "type": "temperatura",
+        "TimeInstant": "2019-05-28T15:26:25.00Z",
+        "bateria": "20",
+        "cobertura": "-80",
+        "incidencias": "Batería baja",
+        "latitude": "36.72005666274869",
+        "longitude": "-4.464288772194351",
+        "temperatura": "14,8"
+    },
+    {
+        "id": "1",
+        "type": "temperatura",
+        "TimeInstant": "2019-05-28T15:52:49.00Z",
+        "bateria": "80",
+        "cobertura": "-86",
+        "incidencias": "Error de conexión con el servidor, Fallo en el sensor de temperatura",
+        "latitude": "36.72014705451366",
+        "longitude": "-4.468596293137637",
+        "temperatura": "16"
+    },
+    {
+        "id": "3",
+        "type": "mixta",
+        "TimeInstant": "2019-05-28T15:59:35.00Z",
+        "bateria": "50",
+        "cobertura": "-78",
+        "humedad": "17",
+        "incidencias": "[]",
+        "latitude": "36.71982733265364",
+        "longitude": "-4.460006260056474",
+        "temperatura": "14"
+    },
+    {
+        "id": "8",
+        "type": "mixta",
+        "TimeInstant": "2019-05-30T16:48:35.00Z",
+        "bateria": "50",
+        "cobertura": "-72",
+        "humedad": "25",
+        "incidencias": "Error de conexión con el servidor",
+        "latitude": "36.718384",
+        "longitude": "-4.477864",
+        "temperatura": "15,6"
+    }
+]
